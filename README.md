@@ -20,14 +20,14 @@ Sample inputs are in `/samples`: a Senior ML Engineer JD and a mid-level data sc
 
 ## Local setup
 
-You need Python 3.9+, pip, and an Anthropic API key.
+You need Python 3.9+, pip, and an API key (e.g. Google Gemini or Groq).
 
 ```bash
 git clone <your-repo-url>
 cd skillsense-ai
 
-cp .env.example .env
-# put your ANTHROPIC_API_KEY in .env
+cp .env .env  # Or update the provided .env with your own keys
+# put your API_KEY and MODEL in .env
 
 ./start.sh        # Mac / Linux
 start.bat         # Windows
@@ -50,13 +50,13 @@ FastAPI backend (Python)
        └─ /api/chat          — multi-turn assessment loop
                 │
                 ▼
-        Anthropic Claude API
-        (claude-sonnet-4-6)
+          LiteLLM Router
+          (Google Gemini)
 ```
 
 ### How scoring works
 
-Each skill gets two questions in conversation. Claude scores internally on 1-5:
+Each skill gets two questions in conversation. The AI scores internally on 1-5:
 
 | Score | Level | What it means |
 |-------|-------|---------------|
@@ -70,7 +70,7 @@ The overall readiness score (0-100) weights critical skills more. Anything at 3 
 
 ### How the learning plan is built
 
-Gaps are sorted by how important the skill is in the JD, how far the candidate is from the required level, and whether they already know adjacent skills (which shortens the path). Resources come from Claude for that specific skill and level, not a generic list.
+Gaps are sorted by how important the skill is in the JD, how far the candidate is from the required level, and whether they already know adjacent skills (which shortens the path). Resources come from the AI for that specific skill and level, not a generic list.
 
 ---
 
@@ -97,8 +97,8 @@ Gaps are sorted by how important the skill is in the JD, how far the candidate i
 
 ## Tech stack
 
-- **Backend:** Python, FastAPI, Anthropic SDK
-- **AI model:** Claude Sonnet 4.6 (`claude-sonnet-4-6`)
+- **Backend:** Python, FastAPI, LiteLLM
+- **AI model:** Google Gemini (`gemini-2.5-flash`) via LiteLLM
 - **PDF parsing:** pdfplumber
 - **Frontend:** Vanilla HTML/CSS/JS, no build step
 
