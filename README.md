@@ -23,7 +23,7 @@ Sample inputs are in `/samples`: a Senior ML Engineer JD and a mid-level data sc
 You need Python 3.9+, pip, and an API key (e.g. Google Gemini or Groq).
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Arnab-Ghosh7/AI-Powered-Skill-Assessment-Personalised-Learning-Plan-Agent
 cd skillsense-ai
 
 cp .env .env  # Or update the provided .env with your own keys
