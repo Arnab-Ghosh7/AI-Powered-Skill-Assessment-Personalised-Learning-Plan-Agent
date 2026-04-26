@@ -1,0 +1,26 @@
+Job Title: Senior Machine Learning Engineer
+
+About the Role:
+We're looking for an ML engineer to join our platform team and own the full lifecycle of production ML models — from experimentation to deployment.
+
+Responsibilities:
+- Design, train, and deploy machine learning models at scale
+- Build and maintain MLOps pipelines using tools like MLflow, Kubeflow, or Airflow
+- Collaborate with data engineers to build reliable feature stores
+- Optimize model inference latency and cost on cloud infrastructure (AWS/GCP)
+- Write clean, tested Python code and review teammates' code
+- Work with SQL and NoSQL databases to extract and transform training data
+
+Required Skills:
+- Python (advanced) — pandas, numpy, scikit-learn, PyTorch or TensorFlow
+- MLOps — experiment tracking, model versioning, CI/CD for ML
+- SQL — complex queries, window functions, performance tuning
+- Docker & Kubernetes — containerizing and orchestrating ML workloads
+- Cloud platforms — AWS SageMaker or GCP Vertex AI
+- Statistics & probability — hypothesis testing, distributions, A/B testing
+- Communication — explaining technical work to non-technical stakeholders
+
+Nice to Have:
+- Experience with LLMs and vector databases (Pinecone, Weaviate)
+- Familiarity with Spark for large-scale data processing
+- Prior work on recommendation systems or NLP

@@ -1,0 +1,30 @@
+Arnab Ghosh
+ML Engineer | arnab@email.com
+
+EXPERIENCE
+
+Data Scientist — TechCorp (2021–Present)
+- Built classification and regression models using scikit-learn and XGBoost for customer churn prediction (15% accuracy improvement)
+- Wrote Python scripts for data cleaning, feature engineering, and batch predictions
+- Queried and transformed data using SQL (PostgreSQL) for analysis and reporting
+- Created dashboards in Tableau to visualize model outputs
+
+Junior Data Analyst — StartupXYZ (2019–2021)
+- Wrote SQL queries for business reporting
+- Built simple logistic regression models in Python
+- Assisted with A/B tests for marketing campaigns
+
+EDUCATION
+B.Tech Computer Science — NIT (2019)
+
+SKILLS
+Python, pandas, numpy, scikit-learn, XGBoost, SQL, PostgreSQL, Tableau,
+Git, Jupyter, basic statistics, Excel, some exposure to TensorFlow
+
+PROJECTS
+- Customer Churn Predictor: scikit-learn pipeline deployed as a Flask REST API on a single EC2 instance
+- Sales Forecasting: time-series model using Prophet, delivered as a Jupyter notebook
+
+CERTIFICATIONS
+- AWS Cloud Practitioner (2022)
+- Google Data Analytics Certificate (2021)
