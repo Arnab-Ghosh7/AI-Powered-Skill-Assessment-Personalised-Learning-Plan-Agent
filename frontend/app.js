@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://ai-powered-skill-assessment-personalised-4dl3.onrender.com";
+
 /* ── State ── */
 const state = {
   sessionId: null,
@@ -74,12 +76,11 @@ async function startAssessment() {
       else form.append("jd_text", jdText);
       if (resumeFile) form.append("resume_file", resumeFile);
       else form.append("resume_text", resumeText);
-
-      const parseRes = await fetch("/api/upload-text", { method: "POST", body: form });
+      const parseRes = await fetch(`${API_BASE_URL}/api/upload-text`, { method: "POST", body: form });
       if (!parseRes.ok) {
         const textToParse = await parseRes.text();
         try { throw new Error(JSON.parse(textToParse).detail); }
-        catch(e) { throw new Error(e.message === "Unexpected token" ? textToParse : (JSON.parse(textToParse).detail || textToParse)); }
+        catch (e) { throw new Error(e.message === "Unexpected token" ? textToParse : (JSON.parse(textToParse).detail || textToParse)); }
       }
       const parsed = await parseRes.json();
       finalJd = parsed.jd_text;
@@ -90,7 +91,7 @@ async function startAssessment() {
     state.sessionId = crypto.randomUUID();
     showSpinner("Extracting skills from JD...");
 
-    const startRes = await fetch("/api/start-session", {
+    const startRes = await fetch(`${API_BASE_URL}/api/start-session`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -102,7 +103,7 @@ async function startAssessment() {
     if (!startRes.ok) {
       const textToParse = await startRes.text();
       let errDetail = textToParse;
-      try { errDetail = JSON.parse(textToParse).detail || textToParse; } catch(e) {}
+      try { errDetail = JSON.parse(textToParse).detail || textToParse; } catch (e) { }
       throw new Error(errDetail);
     }
     const data = await startRes.json();
@@ -174,7 +175,7 @@ async function sendMessage() {
   $("send-btn").disabled = true;
 
   try {
-    const res = await fetch("/api/chat", {
+    const res = await fetch(`${API_BASE_URL}/api/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ session_id: state.sessionId, message: text }),
@@ -182,7 +183,7 @@ async function sendMessage() {
     if (!res.ok) {
       const textToParse = await res.text();
       let errDetail = textToParse;
-      try { errDetail = JSON.parse(textToParse).detail || textToParse; } catch(e) {}
+      try { errDetail = JSON.parse(textToParse).detail || textToParse; } catch (e) { }
       throw new Error(errDetail);
     }
     const data = await res.json();
