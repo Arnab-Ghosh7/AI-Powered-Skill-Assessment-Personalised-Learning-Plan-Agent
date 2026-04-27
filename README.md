@@ -6,7 +6,7 @@ A resume tells you what someone claims to know. SkillSense finds out how much of
 
 ## What it does
 
-
+Drop in a job description and a resume. SkillSense pulls out the skills the role needs, cross-references them against the resume, then runs a short conversational assessment — scenario-based questions, not multiple choice. Each skill gets scored 1-5 based on how the conversation goes. After that, it generates a personalised learning plan: specific gaps, curated resources, time estimates.
 
 No login, runs in the browser.
 
