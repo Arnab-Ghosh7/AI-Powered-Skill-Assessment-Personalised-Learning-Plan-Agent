@@ -1,8 +1,5 @@
 # SkillSense AI
 
-A resume tells you what someone claims to know. SkillSense finds out how much of that holds up under a few real questions, then builds a plan to close the gaps.
-
----
 
 ## What it does
 
